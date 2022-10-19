@@ -26,7 +26,7 @@ const SingleHouse = ({house}) => {
   return (
     <div className={styles.container}>
         <div className={styles.imgContainer}>
-            <Image src={house.media} width="500px" height="500px"/>
+            <Image src={house.media} width="500px" height="500px" alt='house'/>
         <h4 className={styles.price}>Price: {house.price}€{house.list_type === 'rent' ? '/month' : ''}</h4>
         <h1 className={styles.type}>{house.list_type === 'rent' ? 'For rent' : 'For Sale'}</h1>
         </div>
