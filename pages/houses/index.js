@@ -24,6 +24,9 @@ export default function Home ({ houseList }) {
         const filteredList = houseList.filter(el => el.list_type !== 'rent')
         setList(filteredList)
     }
+    const allProperties = () => {
+        setList(houseList) 
+    }
 
     return (
         <div>
@@ -35,6 +38,7 @@ export default function Home ({ houseList }) {
                 <h1 className={styles.featured}>FEATURED PROPERTIES</h1>
                 <hr className={styles.underline} />
                 <div className={styles.buttonContainer}>
+                <button className={styles.button} onClick={allProperties}>All Properties</button>
                     <button className={styles.button} onClick={salesFilter}>For Sale</button>
                     <button className={styles.button} onClick={rentalFilter}>For Rent</button>
                 </div>

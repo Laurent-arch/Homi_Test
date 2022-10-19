@@ -1,8 +1,9 @@
 import styles from '../../styles/SingleHouse.module.css'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faMapLocation, faDoorOpen, faHelmetSafety, faPaintRoller, faStairs, faBed, faSink } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faMapLocation, faDoorOpen, faHelmetSafety, faPaintRoller, faStairs, faBed, faSink, faRectangleXmark } from '@fortawesome/free-solid-svg-icons'
 import houses from '../../util/data.json'
+import { useState } from 'react'
 
 export const getStaticProps = async({params}) => {
   const houseList = houses.filter(el => el.listing_id.toString() === params.id)
@@ -21,9 +22,16 @@ export const getStaticPaths = async () => {
     return {paths, fallback: false}
 }
 
-
 const SingleHouse = ({house}) => {
+  const [bookView, setBookView] = useState(false)
+ 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setBookView(false)
+  }
+
   return (
+    <>
     <div className={styles.container}>
         <div className={styles.imgContainer}>
             <Image src={house.media} width="500px" height="500px" alt='house'/>
@@ -31,6 +39,7 @@ const SingleHouse = ({house}) => {
         <h1 className={styles.type}>{house.list_type === 'rent' ? 'For rent' : 'For Sale'}</h1>
         </div>
         <div className={styles.infoContainer}>
+          <div className={styles.infosOne}>
           <div className={styles.details}>
           <FontAwesomeIcon icon={faHouse} className={styles.icons}/>
           <h3>{house.property_subcategory.toUpperCase()}</h3>
@@ -48,6 +57,10 @@ const SingleHouse = ({house}) => {
           <FontAwesomeIcon icon={faHelmetSafety} className={styles.icons} />
           <h4 className={styles.size}>Construction Year: {house.construction_year}</h4>
           </div>
+            <button className={styles.tourButton} onClick={() => setBookView(true)}>Book A Viewing</button>
+          </div>
+          <div className={styles.infosTwo}>
+
         <div className={styles.details}>
           <FontAwesomeIcon icon={faPaintRoller} className={styles.icons} />
           <h4 className={styles.size}>Renovation Year: {house.renovation_year}</h4>
@@ -64,14 +77,36 @@ const SingleHouse = ({house}) => {
           <FontAwesomeIcon icon={faSink} className={styles.icons} />
           <h4 className={styles.size}>Bathrooms: {house.bathrooms}</h4>
           </div>
+        
         </div>
+        </div>
+        {bookView && <div className={styles.modal}>
+          <div className={styles.formBlock}>
+            <button className={styles.closeButton} onClick={() => setBookView(false)}><FontAwesomeIcon icon={faRectangleXmark}/></button>
+          
+            <form className={styles.form}>
+              
+              <label >Name</label>
+              <input className={styles.input} type="text" name='name' />
+              <label >Surname</label>
+              <input className={styles.input} type="text" name='surname' />
+              <label>Choose a date</label>
+              <input className={styles.input} type="date" name='date' value=''/>
+              <button className={styles.submitButton} type="submit" onClick={handleSubmit}>Submit</button>
+            </form>
+          </div>
+        </div> }
     </div>
+     
+    </>
   )
 }
 
 
 export default SingleHouse
         
+
+            
         
      
 
