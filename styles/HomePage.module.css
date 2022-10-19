@@ -1,0 +1,46 @@
+.container{
+    background: url('/img/modern-house.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+   
+}
+.container::before{
+  background-color: rgba(0, 0, 0, 0.45);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+.title{
+    margin: 0;
+    padding-top: 5rem;
+    z-index: 2;
+    font-size: 54px;
+    color: white;
+    letter-spacing: 2px;
+}
+.button{
+    z-index: 2;
+    display: block;
+    border: none;
+    background-color: #61e786;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    font: inherit;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: white;
+    color: #61e786;
+}

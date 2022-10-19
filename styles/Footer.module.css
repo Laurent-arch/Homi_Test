@@ -1,0 +1,60 @@
+
+.container{
+    height: 40vh;
+    background-color: #32322a;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo{
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+}
+.left{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.middle{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   color: white;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.text{
+    color: white;
+}
+.right{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.right p{
+    color: white;
+}
+.right h2{
+    color: white;
+}
+.contact{
+    display: flex; 
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+}
+.footerDetails{
+    color: white;
+}

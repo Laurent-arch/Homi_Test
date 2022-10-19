@@ -1,0 +1,37 @@
+.container{
+    height: 120px;
+    padding: 0px 80px;
+    background-color: #32322a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    font-size: 20px;
+}
+.logo{
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+}
+
+.list{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: white;
+}
+.listItem{
+    margin: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.listItem:hover{
+    color: #61e786;
+}
+.item p{
+    color: #61e786;
+    cursor: pointer;
+}
