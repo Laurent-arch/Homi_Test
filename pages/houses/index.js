@@ -5,13 +5,13 @@ import styles from '../../styles/HomeList.module.css'
 import { useState } from 'react'
 
 export const getStaticProps = async () => {
-
     return {
         props: {
             houseList: houses
         }
     }
 }
+
 
 export default function Home ({ houseList }) {
     const [list, setList] = useState(houseList);
