@@ -8,11 +8,11 @@ const HomeCard = ({houses}) => {
       
       <div className={styles.container}>
         <p className={styles.type}>{houses.list_type === 'rent' ? 'For Rent' : "For Sale"}</p>
-          <Image src={houses.media} alt="" width='300px' height='300px'/>
+          <Image src={houses.media} alt="" width='300px' height='300px' className={houses.image}/>
           <h3 className={styles.location}>Area: {houses.suburb}</h3>
           <h4 className={styles.size}>Surface: {houses.size} m2</h4>
           <h4 className={styles.price}>Price: {houses.price}€{houses.list_type === 'rent' ? '/month' : ''}</h4>
-      <Link href={`/houses/${houses.listing_id}`} passHref>
+      <Link href={`/houses/${houses._id}`} passHref>
           <button className={styles.button}>See more details</button>
       </Link>
     </div>

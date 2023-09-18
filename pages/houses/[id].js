@@ -12,25 +12,21 @@ import {
   faSink,
   faRectangleXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import houses from "../../util/data.json";
 import { useState } from "react";
+import axios from "axios";
 
-export const getStaticProps = async ({ params }) => {
-  const houseList = houses.filter(
-    (el) => el.listing_id.toString() === params.id
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(
+    `http://localhost:3001/api/houses/${params.id}`
   );
+  
   return {
+    
     props: {
-      house: houseList[0],
+      house: res.data,
     },
   };
-};
-
-export const getStaticPaths = async () => {
-  const paths = houses.map((property) => ({
-    params: { id: property.listing_id.toString() },
-  }));
-  return { paths, fallback: false };
 };
 
 const SingleHouse = ({ house }) => {
