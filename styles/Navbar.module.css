@@ -35,3 +35,21 @@
     color: #61e786;
     cursor: pointer;
 }
+
+@media screen and (max-width: 640px) {
+   .container {
+    padding: 0px 20px;
+    font-size: 16px;
+   }
+   .logo{
+    width: 40px;
+    height: 40px;
+   }
+   .userButton {
+    display: none;
+   }
+   .item:nth-child(3){
+        display: none;
+   }
+  }
+  

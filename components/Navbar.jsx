@@ -3,12 +3,20 @@ import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import { UserButton } from "@clerk/clerk-react";
 import { useAuth } from "@clerk/clerk-react";
+import { useState } from "react";
+import ResponsiveNavbar from "./ResponsiveNavbar";
 
 const Navbar = () => {
   const { isLoaded, userId, sessionId, getToken } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${menuOpen ? 'open' : ''}`}>
       <div className={styles.item}>
         <div className={styles.logo}>
           <Image src="/img/logo.png" alt="" width="64" height="64" />
@@ -33,11 +41,14 @@ const Navbar = () => {
             <p>Login / Register</p>
           </Link>
         )}
-
-        <Link href="/sign-up">
-          <UserButton afterSignOutUrl="/" />
+          <div className={styles.userButton}>
+          <Link href="/sign-up">
+          <UserButton afterSignOutUrl="/"/>
         </Link>
+          </div>
+        
       </div>
+    <ResponsiveNavbar />
     </div>
   );
 };

@@ -1,60 +1,97 @@
+.container {
+  height: 40vh;
+  background-color: #32322a;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  width: 70px;
+  height: 70px;
+}
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-.container{
-    height: 40vh;
-    background-color: #32322a;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
 }
-.logo{
-    background-color: white;
-    border-radius: 50%;
-    padding: 10px;
-    width: 70px;
-    height: 70px;
-}
-.left{
-   display: flex; 
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
-.middle{
-   display: flex; 
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   color: white;
+.text {
+  color: white;
 }
-.social{
-    display: flex;
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.right p {
+  color: white;
+}
+.right h2 {
+  color: white;
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.footerDetails {
+  color: white;
+}
+
+/* Media Query for Max Width 768px */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: smaller;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .left {
+    margin-bottom: 20px;
+  }
+
+  .middle {
+    margin-bottom: 20px;
+  }
+
+  .social {
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
+  }
 
-.text{
-    color: white;
-}
-.right{
-   display: flex; 
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-}
-.right p{
-    color: white;
-}
-.right h2{
-    color: white;
-}
-.contact{
-    display: flex; 
-   justify-content: center;
-   align-items: center;
-   gap: 5px;
-}
-.footerDetails{
-    color: white;
+  .right {
+    margin-bottom: 20px;
+  }
+
+  .contact {
+    flex-direction: row;
+    justify-content: center;
+  }
 }

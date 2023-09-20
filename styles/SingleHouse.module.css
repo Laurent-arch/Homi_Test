@@ -113,3 +113,42 @@
     font-weight: bolder;
     cursor: pointer;
 }
+
+@media (max-width: 640px) {
+  /* Adjust container padding and flex direction for smaller screens */
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 12rem 0;
+      border: none;
+  }
+
+  /* Adjust width of .infoContainer for smaller screens */
+  .infoContainer {
+      width: 100%; /* Full width for smaller screens */
+  }
+
+  /* Example: Hide absolute positioned elements on smaller screens */
+  .price,
+  .type {
+      display: none;
+  }
+
+  /* Example: Center align the tour button on smaller screens */
+  .tourButton {
+      margin-top: 1rem;
+      text-align: center;
+  }
+
+  /* Example: Reduce font size of .icons for smaller screens */
+  .icons {
+      font-size: 1.5rem; /* Adjust font size as needed */
+  }
+}
+
+
+
+
+

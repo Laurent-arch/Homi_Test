@@ -27,6 +27,9 @@ const ProductSchema = new mongoose.Schema(
     wc: {
       type: String,
     },
+    list_type: {
+      type: String,
+    },
     price: {
       type: String,
     },
