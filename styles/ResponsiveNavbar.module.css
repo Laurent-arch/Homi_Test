@@ -24,9 +24,6 @@
   font-size: 26px;
   z-index: 999;
 }
-.responsiveMenu > :hover{
-    color: #61e786;
-}
 
 @media screen and (max-width: 640px) {
   .burger {

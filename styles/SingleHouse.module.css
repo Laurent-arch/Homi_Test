@@ -1,60 +1,60 @@
-.container{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    padding: 3rem 5rem;
-    position: relative;
-    z-index: 0;
-    gap: 5rem;
-    
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding: 3rem 5rem;
+  position: relative;
+  z-index: 0;
+  gap: 5rem;
 }
-.imgContainer{  
+.imgContainer {
   position: relative;
 }
-.price{
-    position: absolute;
-    top: -20px;
-    right: 0;
-    background-color: #32322a;
-    padding: 15px;
-    color: #61e786;
+.price {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background-color: #32322a;
+  padding: 15px;
+  color: white;
 }
-.type{
+.type {
   position: absolute;
   margin: 0;
   top: 20px;
   left: 4px;
   transform: rotate(-30deg);
-  padding: 20px; 
+  padding: 20px;
 }
-.infoContainer{
+.infoContainer {
   width: 500px;
   display: flex;
   gap: 2rem;
 }
-.tourButton{
-    margin-top: 3rem;
-    border: none;
-    background-color: #61e786;
-    padding: 15px;
-    color: white;
-    border-radius: 5px;
-    font: inherit;
-    font-weight: bolder;
-    cursor: pointer;
+.tourButton {
+  margin-top: 3rem;
+  border: none;
+  background-color: #4e4e4e;
+  padding: 15px;
+  color: white;
+  border-radius: 5px;
+  font: inherit;
+  font-weight: bolder;
+  cursor: pointer;
 }
-.details{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
+.details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  color: #808080;
 }
-.icons{
-    color: #61e786;
+.icons {
+  color: black;
 }
-.modal{
+.modal {
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   height: 100%;
@@ -63,7 +63,7 @@
   justify-content: center;
   align-items: center;
 }
-.formBlock{
+.formBlock {
   background-color: white;
   width: 350px;
   height: 400px;
@@ -78,21 +78,21 @@
   padding: 0;
   overflow: hidden;
 }
-.form{
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.input{
+.input {
   width: 100%;
   padding: 14px 50px;
   background-color: #ebf9ef;
   border-radius: 5px;
   border: none;
 }
-.closeButton{
+.closeButton {
   align-self: flex-end;
   border: none;
   background-color: white;
@@ -102,53 +102,43 @@
   font-weight: bolder;
   font-size: 18px;
 }
-.submitButton{
+.submitButton {
   margin-top: 2rem;
-    border: none;
-    background-color: #61e786;
-    padding: 10px 15px;
-    color: white;
-    border-radius: 5px;
-    font: inherit;
-    font-weight: bolder;
-    cursor: pointer;
+  border: none;
+  background-color: #4e4e4e;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 5px;
+  font: inherit;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 @media (max-width: 640px) {
-  /* Adjust container padding and flex direction for smaller screens */
   .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 12rem 0;
-      border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 12rem 0;
+    border: none;
   }
 
-  /* Adjust width of .infoContainer for smaller screens */
   .infoContainer {
-      width: 100%; /* Full width for smaller screens */
+    width: 100%;
   }
 
-  /* Example: Hide absolute positioned elements on smaller screens */
   .price,
   .type {
-      display: none;
+    display: none;
   }
 
-  /* Example: Center align the tour button on smaller screens */
   .tourButton {
-      margin-top: 1rem;
-      text-align: center;
+    margin-top: 1rem;
+    text-align: center;
   }
 
-  /* Example: Reduce font size of .icons for smaller screens */
   .icons {
-      font-size: 1.5rem; /* Adjust font size as needed */
+    font-size: 1.5rem;
   }
 }
-
-
-
-
-

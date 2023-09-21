@@ -1,9 +1,10 @@
 .container {
   height: 40vh;
-  background-color: #32322a;
+  background-color: #013c5b;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 8rem 0;
 }
 .logo {
   background-color: white;

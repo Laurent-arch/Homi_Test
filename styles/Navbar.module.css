@@ -1,55 +1,55 @@
-.container{
-    height: 120px;
-    padding: 0px 80px;
-    background-color: #32322a;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 2;
-    font-size: 20px;
+.container {
+  height: 120px;
+  padding: 0px 80px;
+  background-color: #005582;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  font-size: 20px;
 }
-.logo{
-    background-color: white;
-    border-radius: 50%;
-    padding: 10px;
-    width: 70px;
-    height: 70px;
+.logo {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  width: 70px;
+  height: 70px;
 }
 
-.list{
-    padding: 0;
-    display: flex;
-    align-items: center;
-    list-style: none;
-    color: white;
+.list {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: white;
 }
-.listItem{
-    margin: 20px;
-    font-weight: 500;
-    cursor: pointer;
+.listItem {
+  margin: 20px;
+  font-weight: 500;
+  cursor: pointer;
 }
-.listItem:hover{
-    color: #61e786;
-}
-.item p{
-    color: #61e786;
-    cursor: pointer;
+.item {
+  color: white;
+  cursor: pointer;
+  font: inherit;
 }
 
 @media screen and (max-width: 640px) {
-   .container {
+  .container {
     padding: 0px 20px;
     font-size: 16px;
-   }
-   .logo{
+  }
+  .logo {
     width: 40px;
     height: 40px;
-   }
-   .userButton {
-    display: none;
-   }
-   .item:nth-child(3){
-        display: none;
-   }
   }
-  
+  .userButton {
+    display: none;
+  }
+  .item:nth-child(3) {
+    display: none;
+  }
+  .list {
+    display: none;
+  }
+}

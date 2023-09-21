@@ -1,5 +1,5 @@
 .container {
-  background: url("/img/modern-house.jpg");
+  background: url("https://images.pexels.com/photos/16053726/pexels-photo-16053726/free-photo-of-ville-soleil-couchant-batiments-new-york.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11,7 +11,7 @@
   gap: 2rem;
 }
 .container::before {
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.15);
   content: "";
   display: block;
   height: 100%;
@@ -31,7 +31,7 @@
   z-index: 2;
   display: block;
   border: none;
-  background-color: #61e786;
+  background-color: #9b9a9a;
   padding: 15px;
   color: white;
   border-radius: 5px;
@@ -41,7 +41,7 @@
 }
 .button:hover {
   background-color: white;
-  color: #61e786;
+  color: #2a2b2a;
 }
 
 @media screen and (max-width: 640px) {
@@ -54,7 +54,7 @@
   .title {
     font-size: 32px;
   }
-  .button{
+  .button {
     margin-top: 2rem;
   }
 }
