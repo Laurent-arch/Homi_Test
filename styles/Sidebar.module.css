@@ -1,0 +1,35 @@
+.container {
+  margin-left: 3rem;
+  padding: 5px;
+  display: flex;
+  gap: 2rem;
+}
+.title {
+  font: inherit;
+  color: #4e4e4e;
+  text-align: start;
+  margin-left: 3rem;
+}
+.category {
+  color: #4e4e4e;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.rangeContainer{
+    display: flex;
+    gap: 2rem;
+}
+
+
+.button {
+  padding: 2px 24px;
+  border: none;
+  background-color: white;
+  border: 2px solid #4e4e4e;
+  cursor: pointer;
+  color: #4e4e4e;
+  font: inherit;
+}

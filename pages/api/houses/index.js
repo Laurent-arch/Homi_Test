@@ -2,7 +2,7 @@ import dbConnect from "../../../util/connect";
 import House from "../../../models/House";
 
 export default async function handler(req, res) {
-  const { method } = req;
+  const { method, query } = req;
 
   dbConnect();
 
@@ -24,4 +24,5 @@ export default async function handler(req, res) {
       //   res.status(500).json({ error: "Internal Server Error" });
     }
   }
+ 
 }

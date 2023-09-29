@@ -2,32 +2,49 @@ import Head from "next/head";
 import HomeCard from "../../components/HomeCard";
 import styles from "../../styles/HomeList.module.css";
 import { useState } from "react";
-import axios from "axios";
+import SearchBar from "../../components/SearchBar";
+import FilterBar from "../../components/Filterbar";
+import { fetchHouseList } from "../../util/getHouse";
+import Pagination from "@mui/lab/Pagination";
 
-
-export const getServerSideProps = async () => {
-  const res = await axios.get("http://localhost:3001/api/houses");
+export async function getServerSideProps() {
+  const houseList = await fetchHouseList();
   return {
     props: {
-      houseList: res.data,
+      houseList,
     },
   };
-};
-
+}
 
 export default function Home({ houseList }) {
   const [list, setList] = useState(houseList);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const rentalFilter = () => {
-    const filteredList = houseList.filter((el) => el.list_type !== "sale");
+  const handleSearchResults = (results) => {
+    setList(results);
+  };
+
+  const handleFilterPriceChange = (filterValue) => {
+    const filteredProducts = houseList.filter(
+      (product) => product.price <= filterValue
+    );
+    setList(filteredProducts);
+  };
+
+  const handleTypeFilter = (filterValue) => {
+    const filteredList = houseList.filter(
+      (house) => house.type === filterValue
+    );
     setList(filteredList);
   };
-  const salesFilter = () => {
-    const filteredList = houseList.filter((el) => el.list_type !== "rent");
-    setList(filteredList);
-  };
-  const allProperties = () => {
-    setList(houseList);
+
+  const itemsPerPage = 6; 
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedData = list.slice(startIndex, endIndex);
+
+  const handlePageChange = (event, page) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -39,22 +56,28 @@ export default function Home({ houseList }) {
       </Head>
       <h1 className={styles.featured}>FEATURED PROPERTIES</h1>
       <hr className={styles.underline} />
-      <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={allProperties}>
-          All Properties
-        </button>
-        <button className={styles.button} onClick={salesFilter}>
-          For Sale
-        </button>
-        <button className={styles.button} onClick={rentalFilter}>
-          For Rent
-        </button>
-      </div>
+      <SearchBar onSearchResults={handleSearchResults} />
 
+      <FilterBar
+        typeFilterCallback={handleTypeFilter}
+        priceFilterCallback={handleFilterPriceChange}
+      />
       <div className={styles.container}>
-        {list.map((house) => {
-          return <HomeCard key={house.listing_id} houses={house} />;
-        })}
+        <div className={styles.cardContainer}>
+          {paginatedData.map((house) => (
+            <HomeCard key={house.listing_id} houses={house} />
+          ))}
+        </div>
+      </div>
+      <div className={styles.paginationContainer}>
+        <Pagination
+          count={Math.ceil(list.length / itemsPerPage)}
+          page={currentPage}
+          onChange={handlePageChange}
+          variant="outlined"
+          shape="rounded"
+          color="primary"
+        />
       </div>
     </div>
   );
